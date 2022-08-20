@@ -64,7 +64,7 @@ short Parity(unsigned long long x) {
   short result = 0;
   while (x) {
     result ^= 1;
-    x &= (x - 1);
+    x &= (x - 1); // 去掉最低位的1
   }
 
   return result;
