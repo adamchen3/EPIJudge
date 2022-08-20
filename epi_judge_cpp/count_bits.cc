@@ -5,6 +5,15 @@
 
 short CountBits(unsigned int x) {
   // TODO - you fill in here.
+
+  // learn from parity.cc
+  short result = 0;
+  while (x) {
+    result += 1;
+    x &= (x - 1); // 去掉最低位的1
+  }
+  return result;
+
   int bits_num = 0;
   while (x) {
     bits_num += x & 1;
