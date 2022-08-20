@@ -1,3 +1,6 @@
+// Description:
+// Implement code that takes as input a 64-bit integer and swaps the bits at indices i and j.
+
 #include "test_framework/generic_test.h"
 long long SwapBits(long long x, int i, int j) {
   // TODO - you fill in here.

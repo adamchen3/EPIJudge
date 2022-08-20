@@ -1,3 +1,7 @@
+// Description:
+// Write a program that takes a 64-bit word and returns the 64-bit word consisting of
+// the bits of the input word in reverse order.
+
 #include "test_framework/generic_test.h"
 unsigned long long ReverseBits(unsigned long long x) {
   // TODO - you fill in here.

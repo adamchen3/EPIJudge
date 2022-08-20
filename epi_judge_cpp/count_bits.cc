@@ -1,3 +1,6 @@
+// Description:
+// Write a program to count the number of bits that are set to 1 in an integer.
+
 #include "test_framework/generic_test.h"
 
 short CountBits(unsigned int x) {
