@@ -1,5 +1,6 @@
 ## add problem description in the source file
 
+from math import fabs
 import os
 
 path = "./epi_judge_problems/"
@@ -10,23 +11,25 @@ for file_name in files:
     if file_name.endswith(".txt"):
         prefix_name = file_name.split(".")[0]
         code_file = open(code_path + prefix_name + ".cc", "r")
-        first_line = code_file.readline()
-        lines = "// Description:\n"
-        if first_line == lines:
-            code_file.close()
-            continue
+        code_data = ""
+        flag = False
+        for line in code_file:
+            if flag:
+                code_data += line
+                continue
+            if line.startswith("#include"):
+                code_data += line
+                flag = True
 
-        code_data = code_file.read()
-        code_data = first_line + code_data
         code_file.close()
 
+        lines = "// Description:\n"
         code_file = open(code_path + prefix_name + ".cc", "w")
 
         desc_file = open(path + file_name)
         for line in desc_file:
             lines += "// " + line
 
-        print(lines)
 
         code_file.write(lines + "\n\n" + code_data)
         desc_file.close()
