@@ -1,3 +1,9 @@
+// Description:
+// Given two positive integers, compute their quotient, using only the addition,
+// subtraction, and shifting operators.
+// 
+// Hint: Relate x/y to (x-y)/y.
+
 #include "test_framework/generic_test.h"
 int Divide(int x, int y) {
   // TODO - you fill in here.

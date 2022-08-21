@@ -1,3 +1,14 @@
+// Description:
+// Write a program that multiplies two nonnegative integers. The only operators you
+// are allowed to use are
+//     · assignment
+//     · the bitwise operators >>, <<, |, &, ~, ^ and
+//     · equality checks and Boolean combinations thereof.
+// You may use loops and functions that you write yourself. These contraints imply,
+// for example, that you cannot use increament or decrement, or test if x < y.
+// 
+// Hint: Add using bitwise operations; multiply using shift-and-add.
+
 #include "test_framework/generic_test.h"
 unsigned long long Multiply(unsigned long long x, unsigned long long y) {
   // TODO - you fill in here.

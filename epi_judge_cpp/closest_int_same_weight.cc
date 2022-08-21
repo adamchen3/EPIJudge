@@ -7,6 +7,8 @@
 // y which is not equal to x, but has the same weight as x and their difference, |y - x|, is
 // as small as possible. You can assume x is not 0, or all 1s. For example, if x = 6(110), You
 // should return 5(011).
+// 
+// Hint: Start with the least significant bit.
 
 #include "test_framework/generic_test.h"
 unsigned long long ClosestIntSameBitCount(unsigned long long x) {

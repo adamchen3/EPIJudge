@@ -1,3 +1,8 @@
+// Description:
+// Write a program that takes a double x and an integer y and returns x**y.
+// 
+// Hint: Exploit mathematical properties of exponentiation.
+
 #include "test_framework/generic_test.h"
 double Power(double x, int y) {
   // TODO - you fill in here.

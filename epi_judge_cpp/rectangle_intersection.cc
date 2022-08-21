@@ -1,3 +1,12 @@
+// Description:
+// Write a program whic tests if two rectangles have a nonempty intersection.
+// If the intersection is nonempty, return the rectangle formed by their intersection.
+// 
+// This problem is concerned with rectangles whose sides are parallel to the X-axis and
+// Y-axis.
+// 
+// Hint: Think of the X and Y dimensions independently.
+
 #include <tuple>
 
 #include "test_framework/fmt_print.h"
