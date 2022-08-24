@@ -13,7 +13,22 @@
 #include "test_framework/generic_test.h"
 unsigned long long ClosestIntSameBitCount(unsigned long long x) {
   // TODO - you fill in here.
-  return 0;
+  if (x == 0 || x == 0xffffffff) {
+    return 0;
+  }
+  short bit_pos = 0;
+  auto lower_bit = 0ull;
+  auto higher_bit = 0ull;
+  do {
+    lower_bit = x & (1ull << bit_pos);
+    higher_bit = x & (1ull << (bit_pos + 1));
+    bit_pos++;
+  } while ((lower_bit << 1) == higher_bit);
+ 
+  // swap bits
+  x ^= (1ull << (bit_pos - 1));
+  x ^= (1ull << bit_pos);
+  return x;
 }
 
 int main(int argc, char* argv[]) {
