@@ -66,7 +66,7 @@ short Parity(unsigned long long x) {
   short result = 0;
   while (x) {
     result ^= 1;
-    x &= (x - 1); // È¥µô×îµÍÎ»µÄ1
+    x &= (x - 1); // å»æ‰æœ€ä½ä½çš„1
   }
 
   return result;
@@ -101,7 +101,7 @@ short Parity(unsigned long long x) {
     bits_num += x & 1;
     x >>= 1;
   }
-  return bits_num & 1; // µÚÒ»Î»ÊÇ1¾ÍÊÇodd£¬ÊÇ0¾ÍÊÇeven
+  return bits_num & 1; // ç¬¬ä¸€ä½æ˜¯1å°±æ˜¯oddï¼Œæ˜¯0å°±æ˜¯even
 }
 
 
