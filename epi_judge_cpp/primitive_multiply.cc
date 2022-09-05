@@ -26,7 +26,6 @@ std::tuple<unsigned long long, unsigned long long> FullAdder(unsigned long long 
 }
 
 unsigned long long Add64(unsigned long long x, unsigned long long y) {
-  // use c++17 feature
   auto carry = 0ull;
   auto tmp_sum = 0ull;
   auto sum = 0ull;
@@ -41,11 +40,21 @@ unsigned long long Add64(unsigned long long x, unsigned long long y) {
 unsigned long long Multiply(unsigned long long x, unsigned long long y) {
   // TODO - you fill in here.
   unsigned long long ret = 0;
+  while (x) {
+    if (x & 1ull) {
+      ret = Add64(ret, y);
+    }
+    x >>= 1;
+    y <<= 1;
+  }
+
+  /*
   for (int i = 0; i < 64; i++) {
     if ((x & (1ull << i)) != 0) {
       ret = Add64(ret, y << i);
     }
   }
+  */
   return ret;
 }
 
