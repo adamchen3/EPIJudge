@@ -75,4 +75,4 @@ unsigned long long Multiply(unsigned long long x, unsigned long long y) {
 }
 ```
 
-时间复杂度：$O(n^2)$，n为unsigned long long的字长。
+时间复杂度：$O(n^2)$，n为unsigned long long的位长。

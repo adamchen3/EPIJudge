@@ -34,7 +34,8 @@ unsigned long long ClosestIntSameBitCount(unsigned long long x) {
     }
   }
 ```
-时间复杂度：$O(n)$，$n$是输入的字长。
+时间复杂度：$O(n)$，$n$是unsigned long long的
+位长。
 
 空间复杂度：$O(1)$
 

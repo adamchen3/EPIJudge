@@ -9,7 +9,7 @@ short Parity(unsigned long long x) {
   }
   return bits_num & 1; // 第一位是1就是odd，是0就是even
 ```
-最坏时间复杂度：$O(n)$，$n$为unsigned long long的位数。比如x=0b1111...111（全是1）。
+最坏时间复杂度：$O(n)$，$n$为unsigned long long的位长。比如x=0b1111...111（全是1）。
 
 最好时间复杂度：$O(1)$，比如x=0
 
@@ -37,9 +37,9 @@ short Parity(unsigned long long x) {
 ```
 时间复杂度分析主要看divide_and_conquer_helper的调用次数吧。当bits_len=1时，调用1次；当bits_len=2时，分两次bits_len=1来处理，调用了2\*1=2次；当bits_len=4时，分两次bits_len=2来处理，调用了2\*2\*1=4次；当bits_len=8时，分两次bits_len=4来处理，调用了2\*2\*2\*1=8次；...；以此类推，当bits_len=n时，分两次bits_len = n/2次来处理，调用了$\underbrace{2*2*2*...*2}_{log_2(n)} = 2 ^ {log_2(n)} = n$次。
 
-所以，最好最坏的时间复杂度都是$O(n)$，$n$是unsigned long long的字长。
+所以，最好最坏的时间复杂度都是$O(n)$，$n$是unsigned long long的位长。
 
-空间复杂度：$O(log_2n)$，$n$是unsigned long long的字长。因为每层递归是$O(1)$，共$log_2n$层？
+空间复杂度：$O(log_2n)$，$n$是unsigned long long的位长。因为每层递归是$O(1)$，共$log_2n$层？
 
 这么看来，分治法的平均性能应该还没暴力法好。但是，分治法还可以进一步优化一下，比如，分治结束的条件不一定是要到bits_len = 1时才结束，其实bits_len = 2时也可以结束了：
 ```c++
@@ -140,6 +140,6 @@ short Parity(unsigned long long x) {
   return x & 1;
 }
 ```
-时间复杂度：$O(log_2n)$，$n$是unsigned long long的字长。
+时间复杂度：$O(log_2n)$，$n$是unsigned long long的位长。
 
 空间复杂度：$O(1)$

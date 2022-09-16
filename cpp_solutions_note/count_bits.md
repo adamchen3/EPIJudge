@@ -11,7 +11,7 @@ short CountBits(unsigned int x) {
   return bits_num;
 }
 ```
-最坏时间复杂度：$O(n)$，$n$为unsigned int的位数。比如x=0b1111...111（全是1）。
+最坏时间复杂度：$O(n)$，$n$为unsigned int的位长。比如x=0b1111...111（全是1）。
 
 最好时间复杂度：$O(1)$，比如x=0
 
