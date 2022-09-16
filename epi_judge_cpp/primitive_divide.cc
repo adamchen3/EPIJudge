@@ -7,7 +7,18 @@
 #include "test_framework/generic_test.h"
 int Divide(int x, int y) {
   // TODO - you fill in here.
-  return 0;
+  int ret = 0;
+  int power = 32;
+  auto y_power = static_cast<unsigned long long>(y) << power;
+  while (x >= y) {
+    while (y_power > x) {
+      power--;
+      y_power >>= 1;
+    }
+    x -= y_power;
+    ret += (1u << power);
+  }
+  return ret;
 }
 
 int main(int argc, char* argv[]) {
