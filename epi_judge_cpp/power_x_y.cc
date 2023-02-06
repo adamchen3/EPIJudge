@@ -6,7 +6,11 @@
 #include "test_framework/generic_test.h"
 double Power(double x, int y) {
   // TODO - you fill in here.
-  return 0.0;
+  while (y > 0) {
+    x *= x;
+    y--;
+  }
+  return x;
 }
 
 int main(int argc, char* argv[]) {
